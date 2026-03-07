@@ -1,7 +1,26 @@
 package com.example.demo.Controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import com.example.demo.CloudVendor;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RestController //used to create rest API
+@RequestMapping("/cloudvendor") // definesthe base URL path for the API , all endpoints insde the controller will start with /cloudvendor
 public class CloudAPIService {
+    CloudVendor cloudVendor;
+    //private CloudVendor cloudvendor;
+
+    @GetMapping("{vendorId}")
+    public CloudVendor getCloudVendorDetails(String vendorId) {
+        //returning cloud vendor object
+
+        return  cloudVendor;
+    }
+
+    @PostMapping
+    //we will be passing the cloud vendor object becouse the object will be reciving in the post request body itself
+    public String createCloudVendorDetails(@RequestBody  CloudVendor cloudVendor){
+        this.cloudVendor = cloudVendor ;
+        return "Cloud vendor has been created";
+
+    }
 }
