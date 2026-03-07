@@ -33,5 +33,14 @@ public class CloudAPIService {
 
     }
 
+    //
+    @DeleteMapping
+    //we will be deleting according to vendor id
+    public String deleteCloudVendorDetails(String vendorId){
+        this.cloudVendor = null ;
+        return "Cloud vendor has been deleted successfully ";
+
+    }
+
 
 }
