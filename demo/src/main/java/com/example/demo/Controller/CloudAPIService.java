@@ -29,7 +29,7 @@ public class CloudAPIService {
     //we will be passing the cloud vendor object becouse the object will be reciving in the post request body itself
     public String updateCloudVendorDetails(@RequestBody  CloudVendor cloudVendor){
         this.cloudVendor = cloudVendor ;
-        return "Cloud vendor has been updated ";
+        return "Cloud vendor has been updated successfully ";
 
     }
 
