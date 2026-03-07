@@ -9,8 +9,8 @@ public class CloudAPIService {
     CloudVendor cloudVendor;
     //private CloudVendor cloudvendor;
 
-    @GetMapping("{vendorId}")
-    public CloudVendor getCloudVendorDetails(String vendorId) {
+    @GetMapping("/{vendorId}")
+    public CloudVendor getCloudVendorDetails(@PathVariable String vendorId) {
         //returning cloud vendor object
 
         return  cloudVendor;
@@ -33,10 +33,10 @@ public class CloudAPIService {
 
     }
 
-    //
-    @DeleteMapping
+    //debug issue the api was not deleting , issue is id didnt pass the paremeter
+    @DeleteMapping("/{vendorId}")
     //we will be deleting according to vendor id
-    public String deleteCloudVendorDetails(String vendorId){
+    public String deleteCloudVendorDetails(@PathVariable String vendorId){
         this.cloudVendor = null ;
         return "Cloud vendor has been deleted successfully ";
 
